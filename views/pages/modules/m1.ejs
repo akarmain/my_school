@@ -1,0 +1,159 @@
+<%- include('../../pages/template/baze.ejs', { title: 'M3' ,
+	headExtra: '<script defer src="js/m1.js" crossorigin="anonymous"></script>' , body: ` <div class='all_tasks mb-5'>
+	<h1 class="title mt-3">Задания 1
+		модуля <br>На линейные алгоритмы (Z)</h1>
+	<div class="task-card">
+		<div class="task-title">1 Цифры (1)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="X (1234)" id="input_Z1_x" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="Z1()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_Z1' class='mt-2'></label>
+		<div class="task-description">
+			<p>Вывести все факториалы положительных целых чисел до данного числа N < 20. *С11 Вывести факториалы больших
+					чисел, не используя встроенные функции.</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">2 Треугольник (2,5)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="a (1)" id="input_Z2_a" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="b (1)" id="input_Z2_b" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="c (1)" id="input_Z2_c" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="Z2()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_Z2' class='mt-2'></label>
+		<div class="task-description">
+			<p>Даны три стороны невырожденного треугольника. Найти: периметр, площадь по формуле Герона,
+				высоты, медианы, биссектрисы, углы (в градусах), радиусы описанной и вписанной окружности,
+				округлить ответы до 3 знаков после запятой, углы перевести в градусы и минуты.
+			</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">3 Полёт (1)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="V (20)" id="input_Z3_v" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="S (20)" id="input_Z3_s" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="Z3()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_Z3' class='mt-2'></label>
+		<div class="task-description">
+			<p>Найти сколько лет, месяцев и суток будет длиться космический полет с постоянной скоростью V,
+				заданной в км/с, если расстояние S до цели полёта задано в астрономических единицах. Все данные
+				в задаче целочисленные, взять следующие определения единиц: 1 а.е.= 150 млн. км., сутки = 24 часа,
+				месяц = 30 суток, год = 365 суток.
+			</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">4.1 Часы и минуты (0,5)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="x° (45)" id="input_Z41_x" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="Z41()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_Z41' class='mt-2'></label>
+		<div class="task-description">
+			<p>Дан угол между часовой стрелкой и направлением на 0 (12) часов в полночь в градусах. Определить
+				сколько прошло времени в часах и минутах с начала суток.
+			</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">* 4.2 Часы и минуты (0,5)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="Часы (1)" id="input_Z42_h" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="Минуты (30)" id="input_Z42_m" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="Z42()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_Z42' class='mt-2'></label>
+		<div class="task-description">
+			<p>Дано время в часах и минутах, определить положение часовой стрелки в
+				градусах от вертикального положения по ходу часовой стрелки.
+			</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">5 МКАД (1)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="V (60)" id="input_Z5_v" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="T (2)" id="input_Z5_t" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="Z5()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_Z5' class='mt-2'></label>
+		<div class="task-description">
+			<p>Длина Московской кольцевой автомобильной дороги —109 километров. Байкер Вася стартует с
+				нулевого километра МКАД и едет со скоростью v километров в час (если v>0, то Вася движется в
+				положительном направлении по МКАД, если же значение v<0, то в отрицательном). На какой отметке он остановится
+					через t часов (все данные в задаче целочисленные)? </p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">* 6 Максимум и минимум (2)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="a" id="input_Z6_a" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="b" id="input_Z6_b" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="c" id="input_Z6_c" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="Z6()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_Z6' class='mt-2'></label>
+		<div class="task-description">
+			<p>Найти максимум и минимум из трёх чисел, не используя ветвление и функции max() и min().</p>
+		</div>
+	</div>
+
+	
+	</div>
+
+
+
+
+	`
+	}) %>

@@ -1,0 +1,164 @@
+<%- include('../../pages/template/baze.ejs', { title: 'M3' ,
+	headExtra: '<script defer src="js/m2.js" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>' , body: ` <div class='all_tasks mb-5'>
+	<h1 class="title mt-3">Задания 2
+		модуля <br>На алгоритмы ветвления (V)</h1>
+
+
+	<div class="task-card">
+		<div class="task-title">1 Макс и Мин (1)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="a" id="input_V1_a" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="b" id="input_V1_b" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="c" id="input_V1_c" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="V1()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_V1' class='mt-2'></label>
+		<div class="task-description">
+			<p>Найти среднее, максимальное и минимальное из трёх целых чисел (если они существуют, в
+				противном случае вывести сообщение «Числа равны», «Его нет»), определить – сколько из них
+				одинаковых.</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">2.1 ЛУР и КВУР (1,5)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="a (0)" id="input_V21_a" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="b (2)" id="input_V21_b" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="c (3)" id="input_V21_c" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="V21()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_V21' class='mt-2'></label>
+		<div class="task-description">
+			<p>Написать программу решения квадратного: ax^2+bx+c=0 и линейного (в случае a=0) уравнений.</p>
+		</div>
+	</div>
+
+	<div class="task-card">
+		<div class="task-title">2.2 ЛУР и КВУР (2,5)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="a (0)" id="input_V22_a" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="b (2)" id="input_V22_b" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="c (3)" id="input_V22_c" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="d (0)" id="input_V22_d" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="V22()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_V22' class='mt-2'></label>
+		<div class="task-description">
+			<p>Написать программу решения кубического уравнения: ax^3+bx^2+cx+d=0 (должна решать
+				квадратное при a=0, линейное при b=0).</p>
+		</div>
+	</div>
+
+
+
+	<div class="task-card">
+		<div class="task-title">3 Оценка (1)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="M (85)" id="input_V3_M" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="N (100)" id="input_V3_N" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="V3()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_V3' class='mt-2'></label>
+		<div class="task-description">
+			<p>Дана неотрицательная оценка M в произвольной ненулевой положительной шкале N. Написать
+				программу перевода оценки в процентную шкалу:<br> менее 50% - «неудовлетворительно»<br> от 50 до
+				65 (включительно) – «удовлетворительно»,<br> от 65 до 85 (включительно) – «хорошо»,<br> от 85 до 100 –
+				«отлично».</p>
+		</div>
+	</div>
+
+
+
+	<div class="task-card">
+		<div class="task-title">4 Треугольник (1,5)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="a (1)" id="input_V4_a" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="b (1)" id="input_V4_b" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="c (2)" id="input_V4_c" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="V4()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_V4' class='mt-2'></label>
+		<div class="task-description">
+			<p>Даны три неотрицательных числа. Определить: существует ли треугольник с такими сторонами,
+				если да, – то какой он: равносторонний, равнобедренный, тупоугольный, остроугольный,
+				прямоугольный, вырожденный (с нулевой площадью)</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">5 Римские числа (1,5)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="X (14)" id="input_V5_x" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="V5()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_V5' class='mt-2'></label>
+		<div class="task-description">
+			<p>
+				Вводится число в 10-ой системе счисления (не более 1000). Выводится соответствующее число в
+				Римской системе счисления.
+			</p>
+		</div>
+	</div>
+
+	<div class="task-card">
+		<div class="task-title">6 День, месяц, год (1,5)</div>
+		<div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="Месяц (5)" id="input_V6_m" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+					<input type="number" placeholder="День (2)" id="input_V6_d" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+					<input type="number" placeholder="Год (2016)" id="input_V6_y" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="V6()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_V6' class='mt-2'></label>
+		<div class="task-description">
+			<p>
+				Вводится месяц, день и год. Выводится название месяца/дня.
+			</p>
+		</div>
+	</div>
+</div>
+
+	`
+	}) %>

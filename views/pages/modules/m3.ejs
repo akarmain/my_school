@@ -1,0 +1,118 @@
+<%- include('../../pages/template/baze.ejs', { title: 'M3' ,
+	headExtra: '<script defer src="js/m3.js" crossorigin="anonymous"></script>' , body: ` <div class='all_tasks mb-5'>
+	<h1 class="title mt-3">Задания 3 модуля <br>На определенный цикл (C)</h1>
+	<div class="task-card">
+		<div class="task-title">1 Вывести все факториалы положительных целых чисел (1)</div>
+		<div class="task-input-c1">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-default">Ввод</span>
+				<input type="text" class="form-control" aria-label="Sizing example input"
+					aria-describedby="inputGroup-sizing-sm" placeholder="5">
+			</div>
+			<button type="button" onclick="C1()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_C1' class='mt-2'></label>
+		<div class="task-description">
+			<p>Дано четырёхзначное целое положительное число. Выделить цифры в числе, найти их сумму и
+				произведение, собрать число «перевертыш».</p>
+		</div>
+	</div>
+
+	<div class="task-card">
+		<div class="task-title">2 Сумма и произведение (0,5)</div>
+		<div class="task-input-c2">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-default">Ввод <br> a1 d N </span>
+				<textarea class="form-control" aria-label="With textarea" placeholder="3 \n2 \n1 -6 5"
+					style='height: 70px;'></textarea>
+			</div>
+			<button type="button" onclick="C2()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_C2' class='mt-2'></label>
+		<div class="task-description">
+			<p>Вывести сумму и произведение вводимых с клавиатуры N чисел, определить, сколько среди них положительных,
+				отрицательных, нулевых, кратных и некратных заданному М.
+			</p>
+		</div>
+	</div>
+
+	<div class="task-card">
+		<div class="task-title">3 Сумма и произведение прогрессий (1)</div>
+		<div class="task-input-с3">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-default">Ввод <br> a1 d N </span>
+				<textarea class="form-control" id="inputData" aria-label="With textarea" placeholder="1 2 5"
+					style='height: 70px;'></textarea>
+			</div>
+			<button type="button" onclick="C3()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_C3' class='mt-2'></label>
+		<div class="task-description">
+			<p>Вывести значения и суммы арифметической/геометрической прогрессии по заданному количеству членов N. Значения
+				первого члена и разности/знаменателя могут быть вещественными.</p>
+		</div>
+	</div>
+
+	<div class="task-card">
+		<div class="task-title">4 Числа Фибоначчи и их сумма (1)</div>
+		<div class="task-input-c4">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите N</span>
+				<input type="number" id="fibonacciInput" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="C4()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_C4' class='mt-2'></label>
+		<div class="task-description">
+			<p>Вывести первые N < 50 чисел Фибоначчи и найти их сумму.</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">5 Счастливые билетики (1)</div>
+		<div class="task-input-c5">
+			<button type="button" onclick="С5()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_C5' class='mt-2'></label>
+		<div class="task-description">
+			<p>Определить количество счастливых шестизначных билетов, у которых сумма первых трёх цифр номера совпадает с суммой последних трёх.</p>
+		</div>
+	</div>
+
+	<div class="task-card">
+		<div class="task-title">6 Счет (1)</div>
+		<div class="task-input-c6">
+			<button type="button" onclick="С6()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_C6' class='mt-2'></label>
+		<div class="task-description">
+			<p>Определить сколько чисел от 10 до 1000 включительно: <br>1) делится на 2 или на 3; <br> 2) делится на 3, 5 и 7 одновременно; <br> 3) сумма цифр которых чётна; <br> 4) в которых есть повторяющиеся цифры.</p>
+		</div>
+	</div>
+
+	<div class="task-card">
+		<div class="task-title">7 Ряд Маклорена (2)</div>
+		<div class="input-group input-group-sm mb-3">
+			<span class="input-group-text" id="inputGroup-sizing-sm">Для x</span>
+			<input type="number" id="input_C7_x" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+		</div>
+
+		<div class="input-group input-group-sm mb-3">
+			<span class="input-group-text" id="inputGroup-sizing-sm">Для  N</span>
+			<input type="number" id="input_C7_n" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+		</div>
+
+		<div class="task-input-c7">
+			<button type="button" onclick="C7()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_C7' class='mt-2'></label>
+		<div class="task-description">
+			<p>Рассчитать sin(x) и cos(х) с точностью до N (<15) членов ряда. Значения х вводятся в радианах. Сравнить со значением встроенных функций sin(x) и cos(x). </p>
+		</div>
+	</div>
+	</div>
+
+	`
+	}) %>
