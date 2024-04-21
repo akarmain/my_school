@@ -291,3 +291,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 .idea
+ex_bd.json
+py
+bd.js
+/views/py

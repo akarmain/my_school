@@ -1,0 +1,188 @@
+<%- include('../../pages/template/baze.ejs', { title: 'M4' ,
+	headExtra: '<script defer src="js/m4.js" crossorigin="anonymous"></script>' , body: ` <div class='all_tasks mb-5'>
+	<h1 class="title mt-3">Задания 4 модуля <br>На неопределённый цикл (D)</h1>
+	<div class="task-card">
+		<div class="task-title">1.1 НОД и НОК (1)</div>
+		<div class="task-input-D1">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+				<input type="number" placeholder="a (24)" id="input_D1_a" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="b (36)" id="input_D1_b" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+				<input type="number" placeholder="c (18)" id="input_D1_c" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="D1()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_D1' class='mt-2'></label>
+		<div class="task-description">
+			<p>Реализовать программу расчёта НОД и НОК трёх натуральных чисел одним и/или обоими способами:
+				алгоритмом Евклида с помощью циклов и/или рекурсивной функцией.</p>
+		</div>
+	</div>
+
+	<div class="task-card">
+		<div class="task-title">1.2 - Сокращение дробей (1,5)</div>
+		<div class="task-input-D11">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text">Числитель:</span>
+				<input type="number" placeholder="(45)" id="numerator" class="form-control">
+				<span class="input-group-text">Знаменатель:</span>
+				<input type="number" placeholder="(6)" id="denominator" class="form-control">
+			</div>
+			<button type="button" onclick="D11()" class="btn btn-primary btn-sm">Сократить дробь</button>
+		</div>
+		<label id='ans_D11' class='mt-2'></label>
+		<div class="task-description">
+			<p>Написать программу сокращения любых обыкновенных дробей.</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">2 - Сложный процент (1)</div>
+		<div class="task-input-D2">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text">Вклад S:</span>
+				<input type="number" placeholder="(100)" id="initialDeposit" class="form-control">
+				<span class="input-group-text">Увеличить в N раз:</span>
+				<input type="number" placeholder="(2)" id="multiplier" class="form-control">
+				<span class="input-group-text">% ставка P:</span>
+				<input type="number" placeholder="(2)" id="interestRate" class="form-control">
+			</div>
+			<button type="button" onclick="D2()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_D2' class='mt-2'></label>
+		<div class="task-description">
+			<p>Написать программу вычисляющую время в годах, через которое ненулевой банковский вклад S
+				увеличится в N раз, и сумму выплат по процентам, если каждый год на него начисляются p процентов годовых и
+				проценты капитализируются.
+			</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">3.1 - Угадай число (1,5 + 0,5)</div>
+		<div class="task-input-D31">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text">Введите максимальное число N:</span>
+				<input type="number" id="maxNumber" class="form-control" placeholder="(100)">
+				<button type="button" onclick="D31startGame()" class="btn btn-secondary">Начать игру</button>
+			</div>
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text">Ваша попытка:</span>
+				<input type="number" id="userGuess" class="form-control">
+				<button type="button" onclick="D31makeGuess()" class="btn btn-primary">Угадать</button>
+			</div>
+			<label id='	' class='mt-2'></label>
+			<div id="gameResult" class="alert" style="display:none;"></div>
+		</div>
+		<div class="task-description">
+			<p>Компьютер загадывает случайное целое число в диапазоне от 0 до N. Пользователь пытается угадать число,
+				загаданное компьютером. В результате ввода числа с клавиатуры программа выдает только три варианта ответа:
+				«загаданное число больше введенного», «загаданное число меньше введенного», «вы угадали загаданное число с k
+				попыток».
+			</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">3.2 Угадай число (1,5 + 0,5)</div>
+		<div class="task-input-D32">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Максимальное число:</span>
+				<input type="number" placeholder="(100)" id="input_D32_N" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="startD32()" class="btn btn-primary btn-sm">Начать игру</button>
+		</div>
+		<label id='gamePromptD32' class='mt-2'></label>
+		<div id="gameControlsD32" class="mt-3" style="display: none;">
+			<button onclick="checkGuessD32('greater')" class="btn btn-info btn-sm">Больше &gt;</button>
+			<button onclick="checkGuessD32('less')" class="btn btn-info btn-sm">Меньше &lt;</button>
+			<button onclick="checkGuessD32('equal')" class="btn btn-success btn-sm">Равно =</button>
+		</div>
+		<label id='gameResultD32' class='alert mt-2' style="display: none;"></label>
+		<div class="task-description">
+			<p>Компьютер пытается угадать число, заданное пользователем, в диапазоне от 0 до N. Пользователь отвечает: больше,
+				меньше или равно.</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">4.1 Перевод целых чисел в разные системы счисления (1)</div>
+		<div class="task-input-D41">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите число:</span>
+				<input type="number" placeholder="123" id="input_D41_number" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="D41()" class="btn btn-primary btn-sm">Перевести</button>
+		</div>
+		<label id='output_D41' class='mt-2'></label>
+		<div class="task-description">
+			<p>Программа для перевода целых чисел из десятичной системы в 2-ую, 8-ую и 16-ую системы счисления.</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">4.2 Перевод десятичных дробных чисел в разные системы счисления (1,5)</div>
+		<div class="task-input-D42">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите дробное число:</span>
+				<input type="text" placeholder="123.456" id="input_D42_number" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="D42convertFractionalNumber()" class="btn btn-primary btn-sm">Перевести</button>
+		</div>
+		<label id='output_D42' class='mt-2'></label>
+		<div class="task-description">
+			<p>Пользователь вводит число в десятичной форме, которое переводится в бинарный, восьмеричный и шестнадцатеричный
+				форматы. Вывод ограничен 14 знаками после запятой.</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">5 Цифры (1)</div>
+		<div class="task-input-D5">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите целое число:</span>
+				<input type="text" placeholder="12345" id="input_D5_number" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="D5countDigits()" class="btn btn-primary btn-sm">Подсчитать и показать
+				цифры</button>
+		</div>
+		<div id='output_D5' class='mt-2'></div>
+		<div class="task-description">
+			<p>Пользователь вводит число, и программа подсчитывает количество цифр и указывает их порядок.</p>
+		</div>
+	</div>
+
+
+	<div class="task-card">
+		<div class="task-title">6 Простые числа (1,5)</div>
+		<div class="task-input-D1">
+			<div class="input-group input-group-sm mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-sm">Введите N</span>
+				<input type="number" placeholder="(10)" id="input_D1" class="form-control" aria-label="Small"
+					aria-describedby="inputGroup-sizing-sm">
+			</div>
+			<button type="button" onclick="D6()" class="btn btn-primary btn-sm">Вычислить</button>
+		</div>
+		<label id='ans_D6' class='mt-2'></label>
+		<div class="task-description">
+			<p>Рассчитать все простые числа до заданного натурального N (включительно).</p>
+		</div>
+	</div>
+
+
+	</div>
+	`
+	}) %>

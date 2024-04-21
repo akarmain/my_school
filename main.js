@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
 
 app.get('/:moduleId', function(req, res) {
   var moduleId = req.params.moduleId.toUpperCase();
-  if (['M1', "M2", 'M3'].includes(moduleId)) {
+  if (['M1', "M2", 'M3', "M4"].includes(moduleId)) {
     res.render(`pages/modules/${moduleId.toLowerCase()}.ejs`);
   } else {
     const filePath = path.join(__dirname, 'views/pages/template/code_error_404.html');
