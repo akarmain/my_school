@@ -271,7 +271,6 @@ function floatToBase(num, base) {
 		fractionalResult += currentDigit.toString(base)
 		fractionalPart -= currentDigit
 	}
-
 	return (integerResult + fractionalResult).toUpperCase()
 }
 

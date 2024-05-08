@@ -295,3 +295,4 @@ ex_bd.json
 py
 bd.js
 /views/py
+!/views/pages/modules/del.html

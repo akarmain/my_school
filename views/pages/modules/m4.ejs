@@ -1,5 +1,5 @@
 <%- include('../../pages/template/baze.ejs', { title: 'M4' ,
-	headExtra: '<script defer src="js/m4.js" crossorigin="anonymous"></script>' , body: ` <div class='all_tasks mb-5'>
+	headExtra: '<script defer src="../../js/m4.js" crossorigin="anonymous"></script>' , body: ` <div class='all_tasks mb-5'>
 	<h1 class="title mt-3">Задания 4 модуля <br>На неопределённый цикл (D)</h1>
 	<div class="task-card">
 		<div class="task-title">1.1 НОД и НОК (1)</div>
@@ -20,6 +20,7 @@
 			<p>Реализовать программу расчёта НОД и НОК трёх натуральных чисел одним и/или обоими способами:
 				алгоритмом Евклида с помощью циклов и/или рекурсивной функцией.</p>
 		</div>
+    <div id="other_solutions_"></div>
 	</div>
 
 	<div class="task-card">
@@ -180,6 +181,61 @@
 		<div class="task-description">
 			<p>Рассчитать все простые числа до заданного натурального N (включительно).</p>
 		</div>
+
+		<div class="dropdown">
+			<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+				Другие решения
+			</button>
+			<ul class="dropdown-menu">
+				<button type="button" class="btn btn-primary dropdown-item" data-bs-toggle="modal" data-bs-target="#Modal_D6_cpp">
+					решение на c++
+				</button>
+				<button type="button" class="btn btn-primary dropdown-item" data-bs-toggle="modal" data-bs-target="#Modal_D6_python312">
+					решение на python 3.12
+				</button>
+			</ul>
+		</div>
+
+
+
+		<div class="modal fade" id="Modal_D6_cpp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">D6 cpp</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						code
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+						<button type="button" class="btn btn-primary"><i class="bi bi-clipboard"></i> Сократить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="modal fade" id="Modal_D6_cpp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">D6 cpp</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						code
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+						<button type="button" class="btn btn-primary"><i class="bi bi-clipboard"></i> Сократить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
 	</div>
 
 

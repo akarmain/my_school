@@ -1,0 +1,136 @@
+<%- include('../../pages/template/baze.ejs', { title: 'M4' ,
+	headExtra: '<script defer src="../../js/m5.js" crossorigin="anonymous"></script>' , body: `
+
+<div class='all_tasks mb-5'>
+    <h1 class="title mt-3">Задания 5 модуля <br>На массивы (M)</h1>
+    <div class="task-card">
+        <div class="task-title">1 Поиск (1.5)</div>
+        <div class="task-input-M1">
+            <button type="button" onclick="M1()" class="btn btn-primary btn-sm">Сгенерировать</button>
+        </div>
+        <label id='ans_M1' class='mt-2'></label>
+        <div class="task-description">
+            <p>
+                Заполнить матрицу 5*5 случайными целыми числами от 0 до 5 включительно. Найти и вывести сумму
+                главной диагонали, количество элементов равных 0 или 1, сохранить в виде одномерных массивов и
+                вывести на экран средние значения по столбцам и по строкам. Вывести транспонированную матрицу.
+            </p>
+        </div>
+    </div>
+    <div class="task-card">
+        <div class="task-title">2 Сумма и произведение (1)</div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+            <input type="text" placeholder="1 2 3 4 5" id="input_M2_a" class="form-control" aria-label="Small"
+                   aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Введите</span>
+            <input type="text" placeholder="6 7 8 9 10" id="input_M2_b" class="form-control" aria-label="Small"
+                   aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <button type="button" onclick="M2()" class="btn btn-primary btn-sm">Вычислить</button>
+        <label id='ans_M2' class='mt-2'></label>
+
+        <label id='ans_M2' class='mt-2'></label>
+        <div class="task-description">
+            <p>Найти сумму и скалярное произведение двух одномерных массивов (векторов) целых чисел, введённых с
+                клавиатуры (размер массива вводится с клавиатуры, не более 10 элементов).</p>
+        </div>
+    </div>
+    <div class="task-card">
+        <div class="task-title">3 Матрица (1.5)</div>
+        <div class="task-input-M3">
+            <button type="button" onclick="M3()" class="btn btn-primary btn-sm">Сгенерировать</button>
+        </div>
+        <label id='ans_M3' class='mt-2'></label>
+        <div class="task-description">
+            <p>
+                Заполнить матрицу 5*5 случайными целыми числами от 0 до 5 включительно. Найти и вывести сумму
+                главной диагонали, количество элементов равных 0 или 1, сохранить в виде одномерных массивов и
+                вывести на экран средние значения по столбцам и по строкам. Вывести транспонированную матрицу.
+            </p>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <div class="task-title">4.1 Матрица (1.5)</div>
+        <div class="task-input-M4">
+            <button type="button" onclick="M4()" class="btn btn-primary btn-sm">Сгенерировать</button>
+        </div>
+        <label id='ans_M4' class='mt-2'></label>
+        <div class="task-description">
+            <p>
+                Отсортировать одномерный массив, заданный случайными целыми числами в диапазоне [0,100] из 30
+                элементов «методом пузырька» (или простого обмена) по не убыванию и не возрастанию.
+            </p>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <div class="task-title">4.2 Матрица</div>
+        <div class="task-input-M41">
+            <button type="button" onclick="M41()" class="btn btn-primary btn-sm">Сгенерировать</button>
+        </div>
+        <label id='ans_M41' class='mt-2'></label>
+        <div class="task-description">
+            <p>
+                Реализовать сравнительную сортировку указанного массива (списка) из 1000 элементов различными
+                «быстрыми сортировками».
+            </p>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <div class="task-title">5 Умножение матриц (1)</div>
+        <div class="task-input-M5">
+
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Введите N</span>
+                <input type="text" placeholder="5" id="input_M5_a" class="form-control" aria-label="Small"
+                       aria-describedby="inputGroup-sizing-sm">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Введите M</span>
+                <input type="text" placeholder="5" id="input_M5_b" class="form-control" aria-label="Small"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+
+            <button type="button" onclick="M5()" class="btn btn-primary btn-sm">Сгенерировать</button>
+        </div>
+        <label id='ans_M5' class='mt-2'></label>
+        <div class="task-description">
+            <p>
+                Реализовать умножение двух случайно заданных матриц (n, m) * (m, n) в целых числах.
+            </p>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <div class="task-title">6 Рост и Вес (2)</div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text">ФИО</span>
+            <textarea id="input_M6_a" class="form-control" aria-label="Small" placeholder="ФИО\nФИО\n..."
+                      rows="3"></textarea>
+
+            <span class="input-group-text">Рост</span>
+            <textarea id="input_M6_b" class="form-control" aria-label="Small" placeholder="180\n170\n.."
+                      rows="3"></textarea>
+
+            <span class="input-group-text">Вес</span>
+            <textarea id="input_M6_c" class="form-control" aria-label="Small" placeholder="80\n75\n..."
+                      rows="3"></textarea>
+        </div>
+        <button type="button" onclick="processData()" class="btn btn-primary btn-sm">Вычислить</button>
+        <br>
+        <label id='ans_M6' class='mt-2'></label>
+        <div class="task-description">
+            <p>Прочитать массивы «ФИО», «Рост» и «Вес» из 20 элементов из текстовых файлов, составить словарь,
+                вывести на экран, записать в файл произвольного доступа. Вывести ФИО людей с максимальным ростом
+                и/или весом.</p>
+        </div>
+    </div>
+</div>
+
+`
+	}) %>
