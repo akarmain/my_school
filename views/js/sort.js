@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById('barsContainer');
   const sortBtn = document.getElementById('sortBtn');
 
-  // Генерация случайных столбцов
   function generateRandomBars(num = 20) {
     container.innerHTML = '';
     for (let i = 0; i < num; i++) {
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const barHeight = Math.floor(Math.random() * 300) + 50;
       const bar = document.createElement('div');
       bar.style.height = `${barHeight}px`;
-      bar.dataset.height = barHeight; // сохранить высоту в данных элемента
+      bar.dataset.height = barHeight;
       bar.style.width = '100%';
 
       const label = document.createElement('span');
@@ -23,8 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
       container.appendChild(barContainer);
     }
   }
-
-  // Пузырьковая сортировка с анимацией
   async function bubbleSort() {
     let bars = Array.from(document.getElementsByClassName('bar'));
     let len = bars.length;
@@ -38,14 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (height1 > height2) {
           await swapBars(bars[j], bars[j + 1]);
-          // Обновление списка столбцов
           bars = Array.from(document.getElementsByClassName('bar'));
         }
       }
     }
   }
-
-  // Функция для перемещения столбцов
   function swapBars(barContainer1, barContainer2) {
     return new Promise(resolve => {
       const tempHeight = barContainer1.children[0].style.height;
@@ -62,15 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
         resolve();
-      }, 100); // Задержка для визуализации сортировки
+      }, 100);
     });
   }
-
-  // Обработчик события для кнопки сортировки
   sortBtn.addEventListener('click', () => {
     bubbleSort();
   });
-
-  // Генерировать случайные столбцы при загрузке страницы
   generateRandomBars();
 });

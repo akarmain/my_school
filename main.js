@@ -1,7 +1,6 @@
 const express = require('express')
 const path = require('path')
 const app = express()
-const {get_data} = require("./fake_bd.js");
 
 app.use(express.static(path.join(__dirname, 'views')))
 
@@ -15,14 +14,7 @@ app.get('/', function (req, res) {
 app.get('/main/:moduleId', function (req, res) {
     var moduleId = req.params.moduleId.toUpperCase();
     if (['M1', "M2", 'M3', "M4", "M5", "SORT"].includes(moduleId)) {
-
-
-        const data = {
-            data: get_data(moduleId)
-        };
-
-        console.log(data);
-        res.render(`pages/modules/${moduleId.toLowerCase()}.ejs`, data);
+        res.render(`pages/modules/${moduleId.toLowerCase()}.ejs`);
 
     } else {
         const filePath = path.join(__dirname, 'views/pages/template/code_error_404.html');
