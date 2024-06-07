@@ -1,7 +1,7 @@
 # My school [school.akarmain.ru](https://school.akarmain.ru/)
 Это исходники сайта для демонстрации решенных задач по информатике.
 
-[Информация](https://school.akarmain.ru/projects_info/Mini#school_akarmain) о проекте
+[Информация](https://akarmain.ru/projects_info/Mini#school_akarmain) о проекте
 
 <img src="look_like.png" width="720">
 <hr>
