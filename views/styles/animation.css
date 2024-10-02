@@ -1,0 +1,83 @@
+.planet-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+
+.planet-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
+    background-size: 30px 30px, 50px 50px, 80px 80px;
+    background-position: 10px 20px, 30px 50px, 60px 100px;
+    animation: twinkling 5s infinite ease-in-out;
+}
+
+@keyframes twinkling {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Земля */
+.earth {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('../media/earth.png'); /* Путь к изображению Земли */
+    background-size: cover;
+    border-radius: 50%;
+}
+
+/* Луна со свечением */
+.moon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('../media/moon.png'); /* Путь к изображению Луны */
+    background-size: cover;
+    border-radius: 50%;
+    animation: orbit 5s linear infinite;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+
+.years-passed {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    z-index: 10;
+}

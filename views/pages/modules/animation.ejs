@@ -1,0 +1,13 @@
+<%- include('../../pages/template/baze.ejs', { title: 'M4',
+    headExtra: '<link rel="stylesheet" href="../styles/animation.css"><script defer src="../../js/animation.js" crossorigin="anonymous"></script>',
+    body: `
+    <div class='all_tasks mb-5'>
+        <h1 class="title mt-3">Анимация орбиты Луны вокруг Земли</h1>
+        <div class="planet-container">
+            <div class="earth"></div>
+            <div class="moon"></div>
+        </div>
+      <div class="years-passed">Прошло: <span id="years">0</span> лет, <span id="months">0</span> месяцев</div>
+    </div>
+    `
+}) %>
