@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 
 app.get('/main/:moduleId', function (req, res) {
     var moduleId = req.params.moduleId.toUpperCase();
-    if (['M1', "M2", 'M3', "M4", "M5", "SORT", "ANIMATION"].includes(moduleId)) {
+    if (['M1', "M2", 'M3', "M4", "M5", "SORT", "ANIMATION", "QUADRATIC_EQUATION", "TEST_PROD"].includes(moduleId)) {
         res.render(`pages/modules/${moduleId.toLowerCase()}.ejs`);
 
     } else {

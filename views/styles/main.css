@@ -1,11 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container,
+.all_tasks,
+.quiz-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.all_tasks {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .task-card {
     border: 2px solid #3d8bfd;
     padding: 20px;
-    margin: 10px auto;
+    margin: 15px auto;
     border-radius: 8px;
-    max-width: 800px;
     width: 100%;
-    box-sizing: border-box;
+    max-width: 800px;
 }
 
 .task-title {
@@ -24,14 +44,6 @@
     padding-left: 15px;
 }
 
-.all_tasks {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-/* Для  <div class="blue-divider"></div>	*/
 .blue-divider {
     height: 2px;
     background-color: #3d8bfd;
@@ -41,7 +53,7 @@
 
 @media (max-width: 800px) {
     .task-card {
-        margin: 24px;
+        margin: 3px;
         width: 95%;
     }
 
@@ -49,7 +61,6 @@
         width: 90%;
     }
 }
-
 
 .container {
     display: flex;
@@ -73,8 +84,37 @@
 }
 
 #sortBtn {
-    margin-top: 20px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto 0;
+}
+
+#quadratic-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#quadratic-form input,
+#quadratic-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+#quadratic-form input {
+    border: 1px solid #ccc;
+}
+
+#quadratic-form button {
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#result {
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: center;
 }
