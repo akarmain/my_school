@@ -4,17 +4,28 @@
         <script defer src="../../js/animation.js" crossorigin="anonymous"></script>
     `,
     body: `
-    <div class='all_tasks mb-5'>
-        <h1 class="title mt-3">Анимация орбиты Луны вокруг Земли</h1>
-        <div class="planet-container">
-            <div class="earth"></div>
-            <div class="moon"></div>
+        <div class="scene">
+            <div class="earth-system">
+                <div class="earth"></div>
+                <div class="moon"></div>
+            </div>
+
+            <div class="mars"></div>
+            <div class="rocket">
+                <div class="rocket-body">
+                    <div class="rocket-info">
+                        <p>Дистанция от земли: <span id="distance">---</span> км</p>
+                        <p>~ Время: <span id="timeRemaining">---</span> c</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="speed-control">
-            <div class="years-passed">Прошло: <span id="years">0</span> лет, <span id="months">0</span> месяцев</div>
-            <label for="speed">Скорость:</label>
-            <input type="range" id="speed" min="1" max="10" step="0.1" value="5">
+
+        <div class="controls">
+            <label for="speedRange">Скорость ракеты (км/с):</label>
+            <input type="range" id="speedRange" min="1" max="50000" value="10">
+            <button id="startBtn">Старт/Стоп</button>
+            <button id="reverseBtn" disabled>Обратный полёт</button>
         </div>
-    </div>
     `
 }) %>

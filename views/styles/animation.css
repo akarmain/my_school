@@ -1,80 +1,141 @@
-.planet-container {
+/* Общий стиль сцены */
+.scene {
     position: relative;
-    width: 100%;
-    height: 500px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    overflow: hidden;
-}
-
-body {
+    width: 100vw;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    background-color: black;
+    background: radial-gradient(circle, #000 50%, #020b3a);
     overflow: hidden;
-    position: relative;
-    color: white;
+    border: 2px solid #555;
+    border-radius: 10px;
+    color: #fff;
 }
 
-.planet-container::before {
-    content: "";
+/* Система Земли */
+.earth-system {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
-    background-size: 30px 30px, 50px 50px, 80px 80px;
-    background-position: 10px 20px, 30px 50px, 60px 100px;
-    animation: twinkling 5s infinite ease-in-out;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-@keyframes twinkling {
-    0%, 100% {
-        opacity: 0.8;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-/* Земля */
 .earth {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-image: url('../media/earth.png'); /* Путь к изображению Земли */
-    background-size: cover;
     border-radius: 50%;
+    background: url('../media/earth.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
 }
 
-/* Луна со свечением */
 .moon {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-image: url('../media/moon.png'); /* Путь к изображению Луны */
+    background: url('../media/moon.png') no-repeat center center;
     background-size: cover;
     border-radius: 50%;
+    position: absolute;
+    top: -400px; /* Увеличено пропорционально */
+    left: -60px; /* Увеличено пропорционально */
+    transform-origin: 200px 400px; /* Увеличено пропорционально */
     animation: orbit 5s linear infinite;
-    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
 }
 
 @keyframes orbit {
-    0% {
-        transform: rotate(0deg) translateX(150px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(150px) rotate(-360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-
-.years-passed {
-    color: white;
-    font-size: 24px;
-    z-index: 10;
+.mars {
+    position: absolute;
+    border-radius: 50%;
+    background: url('../media/mars.png') no-repeat center center;
+    background-size: cover;
+    top: 50%;
+    left: 90%;
+    transform: translateY(-50%);
 }
+
+/* Ракета */
+.rocket {
+    position: absolute;
+    background: url('../media/rocket.png') no-repeat center center;
+    background-size: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rocket-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.rocket-info {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-55%);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.controls label {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.controls input[type=range] {
+    vertical-align: middle;
+    background-color: #333;
+    border: none;
+    outline: none;
+    appearance: none;
+}
+
+.controls input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.controls input[type=range]::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.earth {
+    width: 20vw;
+    height: 20vw;
+}
+
+.moon {
+    width: 7vw;
+    height: 7vw;
+}
+
+.mars {
+    width: 15vw;
+    height: 15vw;
+}
+
+.rocket {
+    width: 5vw;
+    height: 5vw;
+}
+
