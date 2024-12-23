@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Космический полет</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background: radial-gradient(circle, #000 50%, #020b3a);
+            color: white;
+        }
+
+        .scene {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .earth {
+            position: absolute;
+            width: 20vw;
+            height: 20vw;
+            background: url('https://s3.akarmain.ru/S/as12d_earth.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 50%;
+            top: 50%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+        }
+
+        .rocket {
+            position: absolute;
+            width: 5vw;
+            height: 5vw;
+            background: url('https://s3.akarmain.ru/S/as12d_rocket.png') no-repeat center center;
+            background-size: cover;
+            top: 50%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+        }
+
+        .mars {
+            position: absolute;
+            width: 15vw;
+            height: 15vw;
+            background: url('https://s3.akarmain.ru/S/as12d_mars.png') no-repeat center center;
+            background-size: cover;
+            z-index: -10;
+            border-radius: 50%;
+            top: 50%;
+            left: 90%;
+            transform: translate(-50%, -50%);
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 0 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .controls input {
+            padding: 5px;
+            font-size: 1rem;
+            width: 80px;
+        }
+
+        #distance {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="scene">
+    <div class="earth"></div>
+    <div class="rocket" id="rocket"></div>
+    <div class="mars"></div>
+</div>
+
+<div class="controls">
+    <label>Скорость: <input type="number" id="speed" value="10" min="1" max="100"> км/с</label>
+    <button id="start">Старт</button>
+    <button id="pause">Пауза</button>
+    <button id="reset">Сброс</button>
+    <hr>
+    <span>Дистанция: <span id="distance">0</span> км</span>
+</div>
+
+<script>
+    const rocket = document.getElementById('rocket');
+    const speedInput = document.getElementById('speed');
+    const startButton = document.getElementById('start');
+    const pauseButton = document.getElementById('pause');
+    const resetButton = document.getElementById('reset');
+    const distanceDisplay = document.getElementById('distance');
+
+    let animationFrame;
+    let progress = 0;
+    let speed = parseInt(speedInput.value, 10);
+    let isPaused = false;
+
+    function animate() {
+        if (!isPaused) {
+            progress += speed / 100;
+            if (progress >= 80) {
+                progress = 80;
+                cancelAnimationFrame(animationFrame);
+            }
+            rocket.style.left = `${10 + progress}%`;
+            distanceDisplay.textContent = Math.round(progress * 1000);
+        }
+        animationFrame = requestAnimationFrame(animate);
+    }
+
+    startButton.addEventListener('click', () => {
+        isPaused = false;
+        speed = parseInt(speedInput.value, 10);
+        cancelAnimationFrame(animationFrame);
+        animate();
+    });
+
+    pauseButton.addEventListener('click', () => {
+        isPaused = true;
+    });
+
+    resetButton.addEventListener('click', () => {
+        cancelAnimationFrame(animationFrame);
+        progress = 0;
+        rocket.style.left = '10%';
+        distanceDisplay.textContent = '0';
+    });
+</script>
+</body>
+</html>

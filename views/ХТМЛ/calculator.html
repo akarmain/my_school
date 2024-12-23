@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .display {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            text-align: right;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        .buttons .row, .conversion .row, .factorial .row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-light {
+            background-color: #f8f9fa;
+            color: black;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+<h1 class="title">Калькулятор</h1>
+<div class="calculator">
+    <div id="display" class="display">0</div>
+    <div class="buttons">
+        <div class="row">
+            <button class="btn btn-danger" onclick="clearDisplay()">C</button>
+            <button class="btn btn-secondary" onclick="appendCharacter('(')">(</button>
+            <button class="btn btn-secondary" onclick="appendCharacter(')')">)</button>
+            <button class="btn btn-secondary" onclick="backspace()">⌫</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-light" onclick="appendCharacter('7')">7</button>
+            <button class="btn btn-light" onclick="appendCharacter('8')">8</button>
+            <button class="btn btn-light" onclick="appendCharacter('9')">9</button>
+            <button class="btn btn-secondary" onclick="appendCharacter('/')">÷</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-light" onclick="appendCharacter('4')">4</button>
+            <button class="btn btn-light" onclick="appendCharacter('5')">5</button>
+            <button class="btn btn-light" onclick="appendCharacter('6')">6</button>
+            <button class="btn btn-secondary" onclick="appendCharacter('*')">×</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-light" onclick="appendCharacter('1')">1</button>
+            <button class="btn btn-light" onclick="appendCharacter('2')">2</button>
+            <button class="btn btn-light" onclick="appendCharacter('3')">3</button>
+            <button class="btn btn-secondary" onclick="appendCharacter('-')">−</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-light" style="flex: 2;" onclick="appendCharacter('0')">0</button>
+            <button class="btn btn-light" onclick="appendCharacter('.')">.</button>
+            <button class="btn btn-secondary" onclick="appendCharacter('+')">+</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" style="flex: 1;" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
+    <hr>
+    <h3>Перевод систем счисления</h3>
+    <div class="conversion">
+        <div class="row">
+            <input id="input-number" type="text" class="form-control" placeholder="Число">
+        </div>
+        <div class="row">
+            <input id="from-base" type="number" class="form-control" placeholder="Из системы (2-36)">
+        </div>
+        <div class="row">
+            <input id="to-base" type="number" class="form-control" placeholder="В систему (2-36)">
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" onclick="convertBase()">Перевести</button>
+        </div>
+        <div id="conversion-result" class="display">Результат:</div>
+    </div>
+
+    <hr>
+    <h3>Факториал</h3>
+    <div class="factorial">
+        <div class="row">
+            <input id="factorial-input" type="number" class="form-control" placeholder="Введите число (0-21)">
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" onclick="calculateFactorial()">Вычислить</button>
+        </div>
+        <div id="factorial-result" class="display">Результат:</div>
+    </div>
+</div>
+
+<script>
+    function clearDisplay() {
+        document.getElementById('display').textContent = '0';
+    }
+
+    function appendCharacter(char) {
+        const display = document.getElementById('display');
+        if (display.textContent === '0') {
+            display.textContent = char;
+        } else {
+            display.textContent += char;
+        }
+    }
+
+    function backspace() {
+        const display = document.getElementById('display');
+        display.textContent = display.textContent.slice(0, -1) || '0';
+    }
+
+    function calculateResult() {
+        const display = document.getElementById('display');
+        try {
+            display.textContent = eval(display.textContent.replace(/÷/g, '/').replace(/×/g, '*'));
+        } catch {
+            display.textContent = 'Ошибка';
+        }
+    }
+
+    function convertBase() {
+        const number = document.getElementById('input-number').value;
+        const fromBase = parseInt(document.getElementById('from-base').value, 10);
+        const toBase = parseInt(document.getElementById('to-base').value, 10);
+
+        if (!number || isNaN(fromBase) || isNaN(toBase) || fromBase < 2 || fromBase > 36 || toBase < 2 || toBase > 36) {
+            document.getElementById('conversion-result').textContent = 'Ошибка: проверьте входные данные';
+            return;
+        }
+
+        try {
+            const result = parseInt(number, fromBase).toString(toBase);
+            document.getElementById('conversion-result').textContent = `Результат: ${result}`;
+        } catch {
+            document.getElementById('conversion-result').textContent = 'Ошибка: проверьте входные данные';
+        }
+    }
+
+    function calculateFactorial() {
+        const input = parseInt(document.getElementById('factorial-input').value, 10);
+        const resultElement = document.getElementById('factorial-result');
+
+        if (isNaN(input) || input < 0 || input > 21) {
+            resultElement.textContent = 'Ошибка: введите целое число от 0 до 21.';
+            return;
+        }
+
+        let factorial = 1;
+        const results = [];
+        for (let i = 0; i <= input; i++) {
+            if (i > 0) factorial *= i;
+            results.push(`${i}! = ${factorial}`);
+        }
+
+        resultElement.innerHTML = `<ul>${results.map(r => `<li>${r}</li>`).join('')}</ul>`;
+    }
+</script>
+</body>
+</html>
