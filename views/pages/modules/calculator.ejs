@@ -1,0 +1,81 @@
+<%- include('../../pages/template/baze.ejs', { title: 'Сalculator',
+    headExtra: `
+        <link rel="stylesheet" href="../styles/calculator.css">
+        <script defer src="../../js/calculator.js"></script>
+    `,
+    body: `
+    <div class='all_tasks mb-5'>
+        <h1 class="title mt-3">Калькулятор</h1>
+        <div class="calculator">
+            <div id="display" class="display">0</div>
+            <div class="buttons">
+                <!-- Основные кнопки калькулятора -->
+                <div class="row mb-2">
+                    <button class="btn btn-danger col" onclick="clearDisplay()">C</button>
+                    <button class="btn btn-secondary col" onclick="appendCharacter('(')">(</button>
+                    <button class="btn btn-secondary col" onclick="appendCharacter(')')">)</button>
+                    <button class="btn btn-secondary col" onclick="backspace()">⌫</button>
+                </div>
+                <div class="row mb-2">
+                    <button class="btn btn-light col" onclick="appendCharacter('7')">7</button>
+                    <button class="btn btn-light col" onclick="appendCharacter('8')">8</button>
+                    <button class="btn btn-light col" onclick="appendCharacter('9')">9</button>
+                    <button class="btn btn-secondary col" onclick="appendCharacter('/')">÷</button>
+                </div>
+                <div class="row mb-2">
+                    <button class="btn btn-light col" onclick="appendCharacter('4')">4</button>
+                    <button class="btn btn-light col" onclick="appendCharacter('5')">5</button>
+                    <button class="btn btn-light col" onclick="appendCharacter('6')">6</button>
+                    <button class="btn btn-secondary col" onclick="appendCharacter('*')">×</button>
+                </div>
+                <div class="row mb-2">
+                    <button class="btn btn-light col" onclick="appendCharacter('1')">1</button>
+                    <button class="btn btn-light col" onclick="appendCharacter('2')">2</button>
+                    <button class="btn btn-light col" onclick="appendCharacter('3')">3</button>
+                    <button class="btn btn-secondary col" onclick="appendCharacter('-')">−</button>
+                </div>
+                <div class="row mb-2">
+                    <button class="btn btn-light col-6" onclick="appendCharacter('0')">0</button>
+                    <button class="btn btn-light col" onclick="appendCharacter('.')">.</button>
+                    <button class="btn btn-secondary col" onclick="appendCharacter('+')">+</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary col" onclick="calculateResult()">=</button>
+                </div>
+            </div>
+
+            <hr>
+            <h3 class="mt-4">Перевод систем счисления</h3>
+            <div class="conversion">
+                <div class="row mb-2">
+                    <input id="input-number" type="text" class="form-control col" placeholder="Число">
+                </div>
+                <div class="row mb-2">
+                    <input id="from-base" type="number" class="form-control col" placeholder="Из системы (2-36)">
+                </div>
+                <div class="row mb-2">
+                    <input id="to-base" type="number" class="form-control col" placeholder="В систему (2-36)">
+                </div>
+                <div class="row mb-2">
+                    <button class="btn btn-primary col" onclick="convertBase()">Перевести</button>
+                </div>
+                <div class="row">
+                    <div id="conversion-result" class="display mt-2">Результат: </div>
+                </div>
+            </div>
+
+            <hr>
+            <h3 class="mt-4">Факториал</h3>
+            <div class="factorial">
+                <div class="row mb-2">
+                    <input id="factorial-input" type="number" class="form-control col" placeholder="Введите число (0-21)">
+                </div>
+                <div class="row mb-2">
+                    <button class="btn btn-primary col" onclick="calculateFactorial()">Вычислить</button>
+                </div>
+                <div id="factorial-result" class="display mt-2 ">Результат: </div>
+            </div>
+        </div>
+    </div>
+    `
+}) %>

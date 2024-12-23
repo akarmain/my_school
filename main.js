@@ -11,9 +11,13 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
+app.get('/main/', function (req, res) {
+    res.render('index');
+});
+
 app.get('/main/:moduleId', function (req, res) {
     var moduleId = req.params.moduleId.toUpperCase();
-    if (['M1', "M2", 'M3', "M4", "M5", "SORT", "ANIMATION", "QUADRATIC_EQUATION", "TEST_PROD"].includes(moduleId)) {
+    if (['M1', "M2", 'M3', "M4", "M5", "SORT", "ANIMATION", "QUADRATIC_EQUATION", "TEST_PROD", "CALCULATOR"].includes(moduleId)) {
         res.render(`pages/modules/${moduleId.toLowerCase()}.ejs`);
 
     } else {
